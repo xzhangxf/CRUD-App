@@ -44,14 +44,14 @@ class ListViewController: UIViewController {
         view.addSubview(footerbar)
         
         stackView.addArrangedSubview(helperLabel)
-        stackView.addArrangedSubview(actionButton)
+        //stackView.addArrangedSubview(actionButton)
         footerbar.addSubview(stackView)
         
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(VisitTableViewCell.self, forCellReuseIdentifier: VisitTableViewCell.identifier)
         
-        actionButton.addTarget(self, action: #selector(addButtonTapped), for: .touchUpInside)
+        //actionButton.addTarget(self, action: #selector(addButtonTapped), for: .touchUpInside)
         
     }
 
@@ -104,17 +104,17 @@ class ListViewController: UIViewController {
         return label
     }()
     
-    private let actionButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.titleLabel?.font = .systemFont(ofSize: 14, weight: .regular)
-        button.setTitle("Add Visit", for: .normal)
-        button.setContentHuggingPriority(.required, for: .horizontal)
-//        tells auto layout how strongly a view wants to keep its intrinsic size
-//        .requied = priority 1000 the strongest prossible resistance
-//        So if Auto Layout tries to make the button wider to fill space, the button will refuse and stay as small as needed to fit its content.
-        return button
-    }()
+//    private let actionButton: UIButton = {
+//        let button = UIButton(type: .system)
+//        button.translatesAutoresizingMaskIntoConstraints = false
+//        button.titleLabel?.font = .systemFont(ofSize: 14, weight: .regular)
+//        button.setTitle("Add Visit", for: .normal)
+//        button.setContentHuggingPriority(.required, for: .horizontal)
+////        tells auto layout how strongly a view wants to keep its intrinsic size
+////        .requied = priority 1000 the strongest prossible resistance
+////        So if Auto Layout tries to make the button wider to fill space, the button will refuse and stay as small as needed to fit its content.
+//        return button
+//    }()
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
